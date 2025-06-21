@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://battqjskkj0"]
+
+[ext_resource type="StyleBox" uid="uid://81ftj2qcyehi" path="res://ButtonStyleBox.tres" id="1_fucc5"]
+[ext_resource type="FontFile" uid="uid://b5my3qv6c0poa" path="res://MedievalSharp-Bold.ttf" id="1_vvmgv"]
+
+[resource]
+default_font = ExtResource("1_vvmgv")
+default_font_size = 36
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = ExtResource("1_fucc5")
+Button/styles/disabled_mirrored = ExtResource("1_fucc5")
+Button/styles/focus = ExtResource("1_fucc5")
+Button/styles/hover = ExtResource("1_fucc5")
+Button/styles/hover_mirrored = ExtResource("1_fucc5")
+Button/styles/hover_pressed = ExtResource("1_fucc5")
+Button/styles/hover_pressed_mirrored = ExtResource("1_fucc5")
+Button/styles/normal = ExtResource("1_fucc5")
+Button/styles/normal_mirrored = ExtResource("1_fucc5")
+Button/styles/pressed = ExtResource("1_fucc5")
+Button/styles/pressed_mirrored = ExtResource("1_fucc5")

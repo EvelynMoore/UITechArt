@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://81ftj2qcyehi"]
+
+[ext_resource type="Texture2D" uid="uid://k1wamaheubt1" path="res://ParchmentSection1.png" id="1_m1aj6"]
+
+[resource]
+content_margin_left = 80.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_m1aj6")
