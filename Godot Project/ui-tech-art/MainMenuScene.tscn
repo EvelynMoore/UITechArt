@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698901, 3.27892)
 script = ExtResource("1_o6rx4")
 target = NodePath("../Ground/Castle")
 distance = 8.0
-orbit_speed = 0.2
+orbit_speed = -0.2
 height = 3.0
 
 [node name="Ground" type="MeshInstance3D" parent="."]

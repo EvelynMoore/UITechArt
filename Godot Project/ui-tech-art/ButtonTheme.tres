@@ -5,13 +5,13 @@
 
 [resource]
 default_font = ExtResource("1_vvmgv")
-default_font_size = 36
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+default_font_size = 48
+Button/colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_disabled_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_focus_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_hover_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_hover_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
 Button/styles/disabled = ExtResource("1_fucc5")
 Button/styles/disabled_mirrored = ExtResource("1_fucc5")
 Button/styles/focus = ExtResource("1_fucc5")
