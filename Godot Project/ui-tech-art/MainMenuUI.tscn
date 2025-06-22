@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8c5tbqje2n4q"]
+[gd_scene load_steps=12 format=3 uid="uid://b8c5tbqje2n4q"]
 
 [ext_resource type="Theme" uid="uid://battqjskkj0" path="res://ButtonTheme.tres" id="1_5lhe0"]
 [ext_resource type="FontFile" uid="uid://b5my3qv6c0poa" path="res://MedievalSharp-Bold.ttf" id="1_k586i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://dq1esfxoo4fw1" path="res://FireFade.gdshader" id="5_mgqhi"]
 [ext_resource type="Texture2D" uid="uid://k1wamaheubt1" path="res://ParchmentSection1.png" id="6_74k3h"]
 [ext_resource type="FastNoiseLite" uid="uid://d4lwq2u2owh5e" path="res://Noise1.tres" id="6_tpha8"]
+[ext_resource type="Script" uid="uid://cpsxqtopnm6u5" path="res://texture_button.gd" id="8_tpha8"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_74k3h"]
 seamless = true
@@ -15,9 +16,19 @@ noise = ExtResource("6_tpha8")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tpha8"]
 shader = ExtResource("5_mgqhi")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_74k3h")
-shader_parameter/dissolve_amount = -1.0
+shader_parameter/dissolve_amount = -0.326
 shader_parameter/noise_scale = 1.0
-shader_parameter/dissolve_color = Color(1, 0.733333, 0, 1)
+shader_parameter/dissolve_color = Color(1, 0.333333, 0, 1)
+
+[sub_resource type="Environment" id="Environment_tpha8"]
+background_mode = 3
+background_color = Color(0.337255, 0.435294, 0.580392, 1)
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.95
+glow_blend_mode = 0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2746
 
 [node name="MenuRoot" type="Control"]
 layout_mode = 3
@@ -125,6 +136,11 @@ texture_disabled = ExtResource("6_74k3h")
 texture_focused = ExtResource("6_74k3h")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_tpha8")
+dissolve_duration = 3.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tpha8")
 
 [connection signal="mouse_entered" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_exited"]

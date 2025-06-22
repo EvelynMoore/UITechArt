@@ -14,3 +14,7 @@ config/name="UI Tech Art"
 run/main_scene="uid://dn8j6m23unwix"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+viewport/hdr_2d=true

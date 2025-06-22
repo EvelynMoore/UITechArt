@@ -9,7 +9,7 @@ void fragment() {
     vec2 uv = UV;
 
     vec4 tex_color = texture(TEXTURE, uv);
-    
+
     float noise = texture(noise_texture, uv * noise_scale).r;
 
     float directional_bias = -uv.x;
@@ -21,7 +21,7 @@ void fragment() {
     }
 
     if (dissolve_value < 0.1) {
-        COLOR = dissolve_color;
+        COLOR = dissolve_color * 10.0;
 		COLOR.a = dissolve_color.a * tex_color.a;
     } else {
         COLOR = tex_color;
