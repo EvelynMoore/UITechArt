@@ -46,6 +46,8 @@ theme_override_styles/normal = ExtResource("3_5lhe0")
 text = "Play"
 script = ExtResource("4_bqg4p")
 distanceToMove = 100.0
+duration = 0.2
+distToTeleport = 500.0
 
 [node name="Settings" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
@@ -60,6 +62,9 @@ text = "Settings
 "
 script = ExtResource("4_bqg4p")
 distanceToMove = 100.0
+duration = 0.2
+distToTeleport = 500.0
+waitBeforeInitMove = 0.1
 
 [node name="Credits" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
@@ -73,6 +78,9 @@ theme_override_styles/normal = ExtResource("3_5lhe0")
 text = "Credits"
 script = ExtResource("4_bqg4p")
 distanceToMove = 100.0
+duration = 0.2
+distToTeleport = 500.0
+waitBeforeInitMove = 0.2
 
 [node name="Exit" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
@@ -87,6 +95,9 @@ text = "Exit
 "
 script = ExtResource("4_bqg4p")
 distanceToMove = 100.0
+duration = 0.2
+distToTeleport = 500.0
+waitBeforeInitMove = 0.3
 
 [connection signal="mouse_entered" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_exited"]
