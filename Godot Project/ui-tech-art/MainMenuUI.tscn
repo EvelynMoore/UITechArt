@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8c5tbqje2n4q"]
+[gd_scene load_steps=10 format=3 uid="uid://b8c5tbqje2n4q"]
 
 [ext_resource type="Theme" uid="uid://battqjskkj0" path="res://ButtonTheme.tres" id="1_5lhe0"]
 [ext_resource type="FontFile" uid="uid://b5my3qv6c0poa" path="res://MedievalSharp-Bold.ttf" id="1_k586i"]
 [ext_resource type="StyleBox" uid="uid://81ftj2qcyehi" path="res://ButtonStyleBox.tres" id="3_5lhe0"]
 [ext_resource type="Script" uid="uid://dvxdaqy4iygen" path="res://ButtonMouseOverTween.gd" id="4_bqg4p"]
+[ext_resource type="Shader" uid="uid://dq1esfxoo4fw1" path="res://FireFade.gdshader" id="5_mgqhi"]
+[ext_resource type="Texture2D" uid="uid://k1wamaheubt1" path="res://ParchmentSection1.png" id="6_74k3h"]
+[ext_resource type="FastNoiseLite" uid="uid://d4lwq2u2owh5e" path="res://Noise1.tres" id="6_tpha8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_74k3h"]
+seamless = true
+noise = ExtResource("6_tpha8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpha8"]
+shader = ExtResource("5_mgqhi")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_74k3h")
+shader_parameter/dissolve_amount = -1.0
+shader_parameter/noise_scale = 1.0
+shader_parameter/dissolve_color = Color(1, 0.733333, 0, 1)
 
 [node name="MenuRoot" type="Control"]
 layout_mode = 3
@@ -98,6 +112,19 @@ distanceToMove = 100.0
 duration = 0.2
 distToTeleport = 500.0
 waitBeforeInitMove = 0.3
+
+[node name="TextureButton" type="TextureButton" parent="MainMenuButtons"]
+material = SubResource("ShaderMaterial_tpha8")
+layout_mode = 0
+offset_right = 542.0
+offset_bottom = 86.0
+texture_normal = ExtResource("6_74k3h")
+texture_pressed = ExtResource("6_74k3h")
+texture_hover = ExtResource("6_74k3h")
+texture_disabled = ExtResource("6_74k3h")
+texture_focused = ExtResource("6_74k3h")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="mouse_entered" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_exited"]
