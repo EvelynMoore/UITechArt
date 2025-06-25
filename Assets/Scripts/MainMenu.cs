@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
             startPos.x = -850f;
             rect.anchoredPosition = startPos;
 
-            originalPositions[rect] = new Vector2(-350f, startPos.y);
+            originalPositions[rect] = new Vector2(-320f, startPos.y);
             
             AddHoverEvents(rect);
         }
@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
     {
         foreach (RectTransform rect in buttons)
         {
-            rect.DOAnchorPosX(-350f, 0.5f);
+            rect.DOAnchorPosX(-320f, 0.5f);
             yield return new WaitForSeconds(0.1f);
         }
     }

@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8c5tbqje2n4q"]
+[gd_scene load_steps=10 format=3 uid="uid://b8c5tbqje2n4q"]
 
-[ext_resource type="Theme" uid="uid://battqjskkj0" path="res://ButtonTheme.tres" id="1_5lhe0"]
-[ext_resource type="FontFile" uid="uid://b5my3qv6c0poa" path="res://MedievalSharp-Bold.ttf" id="1_k586i"]
-[ext_resource type="StyleBox" uid="uid://81ftj2qcyehi" path="res://ButtonStyleBox.tres" id="3_5lhe0"]
-[ext_resource type="Script" uid="uid://dvxdaqy4iygen" path="res://ButtonMouseOverTween.gd" id="4_bqg4p"]
+[ext_resource type="Texture2D" uid="uid://dfqqwsd636fih" path="res://SettingsButton.png" id="5_ilsq7"]
 [ext_resource type="Shader" uid="uid://dq1esfxoo4fw1" path="res://FireFade.gdshader" id="5_mgqhi"]
-[ext_resource type="Texture2D" uid="uid://k1wamaheubt1" path="res://ParchmentSection1.png" id="6_74k3h"]
+[ext_resource type="Texture2D" uid="uid://crm4wq845nfeu" path="res://CreditsButton.png" id="6_mgqhi"]
 [ext_resource type="FastNoiseLite" uid="uid://d4lwq2u2owh5e" path="res://Noise1.tres" id="6_tpha8"]
+[ext_resource type="Texture2D" uid="uid://bd66xqnlm4yt0" path="res://ExitButton.png" id="7_74k3h"]
+[ext_resource type="Texture2D" uid="uid://dmsvlon2fbbbh" path="res://PlayButton.png" id="7_tpha8"]
 [ext_resource type="Script" uid="uid://cpsxqtopnm6u5" path="res://texture_button.gd" id="8_tpha8"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_74k3h"]
@@ -16,19 +15,9 @@ noise = ExtResource("6_tpha8")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tpha8"]
 shader = ExtResource("5_mgqhi")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_74k3h")
-shader_parameter/dissolve_amount = -0.326
+shader_parameter/dissolve_amount = -1.0
 shader_parameter/noise_scale = 1.0
 shader_parameter/dissolve_color = Color(1, 0.333333, 0, 1)
-
-[sub_resource type="Environment" id="Environment_tpha8"]
-background_mode = 3
-background_color = Color(0.337255, 0.435294, 0.580392, 1)
-glow_enabled = true
-glow_intensity = 1.0
-glow_strength = 0.95
-glow_blend_mode = 0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.2746
 
 [node name="MenuRoot" type="Control"]
 layout_mode = 3
@@ -38,109 +27,96 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 6398.0
+offset_bottom = 3055.0
+color = Color(0.60696, 0.633756, 0.737558, 1)
+
 [node name="MainMenuButtons" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Play" type="Button" parent="MainMenuButtons"]
-layout_mode = 2
+[node name="Play" type="TextureButton" parent="MainMenuButtons"]
+material = SubResource("ShaderMaterial_tpha8")
+layout_mode = 0
 offset_left = -150.0
 offset_top = 150.0
 offset_right = 350.0
 offset_bottom = 230.0
-theme = ExtResource("1_5lhe0")
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_k586i")
-theme_override_styles/focus = ExtResource("3_5lhe0")
-theme_override_styles/disabled_mirrored = ExtResource("3_5lhe0")
-theme_override_styles/disabled = ExtResource("3_5lhe0")
-theme_override_styles/hover_pressed_mirrored = ExtResource("3_5lhe0")
-theme_override_styles/hover_pressed = ExtResource("3_5lhe0")
-theme_override_styles/hover_mirrored = ExtResource("3_5lhe0")
-theme_override_styles/hover = ExtResource("3_5lhe0")
-theme_override_styles/pressed_mirrored = ExtResource("3_5lhe0")
-theme_override_styles/pressed = ExtResource("3_5lhe0")
-theme_override_styles/normal_mirrored = ExtResource("3_5lhe0")
-theme_override_styles/normal = ExtResource("3_5lhe0")
-text = "Play"
-script = ExtResource("4_bqg4p")
+texture_normal = ExtResource("7_tpha8")
+texture_pressed = ExtResource("7_tpha8")
+texture_hover = ExtResource("7_tpha8")
+texture_disabled = ExtResource("7_tpha8")
+texture_focused = ExtResource("7_tpha8")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_tpha8")
+dissolve_duration = 3.0
 distanceToMove = 100.0
 duration = 0.2
 distToTeleport = 500.0
 
-[node name="Settings" type="Button" parent="MainMenuButtons"]
-layout_mode = 2
+[node name="Settings" type="TextureButton" parent="MainMenuButtons"]
+material = SubResource("ShaderMaterial_tpha8")
 offset_left = -150.0
 offset_top = 250.0
 offset_right = 350.0
 offset_bottom = 330.0
-theme = ExtResource("1_5lhe0")
-theme_override_fonts/font = ExtResource("1_k586i")
-theme_override_styles/normal = ExtResource("3_5lhe0")
-text = "Settings
-"
-script = ExtResource("4_bqg4p")
+texture_normal = ExtResource("5_ilsq7")
+texture_pressed = ExtResource("5_ilsq7")
+texture_hover = ExtResource("5_ilsq7")
+texture_disabled = ExtResource("5_ilsq7")
+texture_focused = ExtResource("5_ilsq7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_tpha8")
+dissolve_duration = 3.0
 distanceToMove = 100.0
 duration = 0.2
 distToTeleport = 500.0
 waitBeforeInitMove = 0.1
 
-[node name="Credits" type="Button" parent="MainMenuButtons"]
-layout_mode = 2
+[node name="Credits" type="TextureButton" parent="MainMenuButtons"]
+material = SubResource("ShaderMaterial_tpha8")
 offset_left = -150.0
 offset_top = 350.0
 offset_right = 350.0
 offset_bottom = 430.0
-theme = ExtResource("1_5lhe0")
-theme_override_fonts/font = ExtResource("1_k586i")
-theme_override_styles/normal = ExtResource("3_5lhe0")
-text = "Credits"
-script = ExtResource("4_bqg4p")
+texture_normal = ExtResource("6_mgqhi")
+texture_pressed = ExtResource("6_mgqhi")
+texture_hover = ExtResource("6_mgqhi")
+texture_disabled = ExtResource("6_mgqhi")
+texture_focused = ExtResource("6_mgqhi")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_tpha8")
+dissolve_duration = 3.0
 distanceToMove = 100.0
 duration = 0.2
 distToTeleport = 500.0
 waitBeforeInitMove = 0.2
 
-[node name="Exit" type="Button" parent="MainMenuButtons"]
-layout_mode = 2
+[node name="Exit" type="TextureButton" parent="MainMenuButtons"]
+material = SubResource("ShaderMaterial_tpha8")
 offset_left = -150.0
 offset_top = 450.0
 offset_right = 350.0
 offset_bottom = 530.0
-theme = ExtResource("1_5lhe0")
-theme_override_fonts/font = ExtResource("1_k586i")
-theme_override_styles/normal = ExtResource("3_5lhe0")
-text = "Exit
-"
-script = ExtResource("4_bqg4p")
-distanceToMove = 100.0
-duration = 0.2
-distToTeleport = 500.0
-waitBeforeInitMove = 0.3
-
-[node name="TextureButton" type="TextureButton" parent="MainMenuButtons"]
-material = SubResource("ShaderMaterial_tpha8")
-layout_mode = 0
-offset_right = 542.0
-offset_bottom = 86.0
-texture_normal = ExtResource("6_74k3h")
-texture_pressed = ExtResource("6_74k3h")
-texture_hover = ExtResource("6_74k3h")
-texture_disabled = ExtResource("6_74k3h")
-texture_focused = ExtResource("6_74k3h")
+texture_normal = ExtResource("7_74k3h")
+texture_pressed = ExtResource("7_74k3h")
+texture_hover = ExtResource("7_74k3h")
+texture_disabled = ExtResource("7_74k3h")
+texture_focused = ExtResource("7_74k3h")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("8_tpha8")
 dissolve_duration = 3.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_tpha8")
+distanceToMove = 100.0
+duration = 0.2
+distToTeleport = 500.0
+waitBeforeInitMove = 0.3
 
 [connection signal="mouse_entered" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenuButtons/Play" to="MainMenuButtons/Play" method="_on_mouse_exited"]

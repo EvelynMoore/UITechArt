@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://blc333ikd3i7d"]
+
+[ext_resource type="PackedScene" uid="uid://ce3r73o70c5b1" path="res://CastleGate.fbx" id="1_imhrk"]
+
+[node name="CastleGate" instance=ExtResource("1_imhrk")]
+
+[node name="Point" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.77712, 4.76592, 8.66096)
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="Point_001" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.19622, 4.79327, 8.52003)
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="Point_002" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.65316, 4.60077, 16.485)
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="Point_003" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.78477, 4.56905, 16.7484)
+light_energy = 10.0
+omni_range = 10.0

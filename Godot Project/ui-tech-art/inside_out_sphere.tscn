@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8cmxslr5scd1"]
+
+[ext_resource type="PackedScene" uid="uid://dh1y4dipowa6c" path="res://InsideOutSphere.fbx" id="1_3d80j"]
+[ext_resource type="Texture2D" uid="uid://p5jbt01kor5r" path="res://citrus_orchard_road_puresky_4k (1).exr" id="2_sbc1r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqjg5"]
+albedo_texture = ExtResource("2_sbc1r")
+
+[node name="InsideOutSphere" instance=ExtResource("1_3d80j")]
+
+[node name="Sphere" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_uqjg5")
+cast_shadow = 0
